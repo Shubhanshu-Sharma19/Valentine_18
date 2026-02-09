@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ANJUUUU ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff4e50, #ff758c);
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 380px;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        text-align: center;
+        padding: 30px;
+        position: relative;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+        color: #ff4e50;
+        margin-bottom: 5px;
+        font-size: 26px;
+    }
+
+    .glow-name {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ff1e56;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 10px #ff1e56, 0 0 20px #ff758c;
+        }
+        to {
+            text-shadow: 0 0 20px #ff1e56, 0 0 35px #ff4e50;
+        }
+    }
+
+    .photo {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-top: 20px;
+        border: 5px solid #ff4e50;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .message {
+        margin-top: 20px;
+        font-size: 17px;
+        color: #444;
+        line-height: 1.6;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        background: #ff4e50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #e63e42;
+        transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-heart {
+        position: absolute;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+        color: rgba(255,255,255,0.8);
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Happy Valentine's Day</h1>
+    <div class="glow-name">ANJUUUU ❤️</div>
+
+    <!-- Make sure image name matches exactly -->
+    <img src="photo.JPG" alt="Her Beautiful Smile" class="photo">
+
+    <div class="message">
+        Every day with you feels like a blessing.  
+        You are my peace, my happiness, and my favorite person.  
+        <br><br>
+        Thank you for being you ❤️
+    </div>
+
+    <button onclick="showLove()">Click for a Surprise</button>
+</div>
+
+<script>
+    function showLove() {
+        alert("ANJUUUU ❤️ You are my forever and always.");
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("floating-heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
